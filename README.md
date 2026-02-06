@@ -1,50 +1,168 @@
-# Welcome to your Expo app 👋
+#React Native E-Commerce App (Assessment Project)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile e-commerce application built with React Native + Expo, demonstrating clean architecture, scalable state management, and production-style patterns within an assessment time constraint.
 
-## Get started
+#Overview
 
-1. Install dependencies
+This project is a simplified e-commerce mobile application that allows users to:
 
-   ```bash
-   npm install
-   ```
+Browse products
 
-2. Start the app
+View product details with image carousel
 
-   ```bash
-   npx expo start
-   ```
+Add products to cart
 
-In the output, you'll find options to open the app in a
+Checkout (mock payment or pay later)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+View order history
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+View user profile
 
-## Get a fresh project
+The focus of this project is architecture quality, state management, and real-world engineering decisions, rather than full backend implementation.
 
-When you're ready, run:
+#Architecture & Design Decisions
+1. Layered Architecture
 
-```bash
-npm run reset-project
-```
+The app follows a feature-oriented layered structure:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+src/
+├── components/        # Reusable UI components
+├── screens/           # Screen-level components
+├── services/          # API calls & external services
+├── store/             # Redux store & slices
+├── types/             # TypeScript domain models
+├── constants/         # App constants
 
-## Learn more
+Why this approach?
 
-To learn more about developing your project with Expo, look at the following resources:
+Clear separation of concerns
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Easier to scale features independently
 
-## Join the community
+Improves testability and maintainability
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+2. #State Management (Redux Toolkit)
+
+I used Redux Toolkit for predictable state management.
+
+Slices implemented:
+
+products – product catalog
+
+cart – cart operations
+
+orders – order history & statuses
+
+profile – user profile data
+
+#Reasons:
+
+Centralized state for cross-screen access
+
+Avoids prop-drilling
+
+Redux Toolkit reduces boilerplate and enforces best practices
+
+3. #Navigation (Expo Router)
+
+File-based routing via expo-router
+
+Tab navigation for core sections
+
+Stack navigation for product details and checkout
+
+#Benefits:
+
+Clean, declarative navigation
+
+Scales well as screens increase
+
+Minimal configuration overhead
+
+
+4. #Type Safety (TypeScript)
+
+All domain models are strongly typed:
+
+Product
+
+CartItem
+
+Order
+
+User
+
+ShippingAddress
+
+#Why this matters:
+
+Prevents runtime bugs
+
+Improves developer experience
+
+Makes state transitions explicit and safe
+
+
+
+Tech Stack
+Technology	Usage
+React Native	- Core mobile framework
+Expo	- Tooling, routing, icons
+TypeScript -	Static typing
+Redux Toolkit -	Global state management
+Expo Router	- Navigation
+React Native Toast Message -	User feedback
+JSONPlaceholder / DummyJSON -	Mock APIs
+
+
+#Authentication (Not Implemented – By Design)
+Why authentication was not implemented:
+
+Time-boxed assessment
+
+No real backend provided
+
+Authentication flows would add significant overhead without improving assessment signal
+
+#Mitigation Strategy:
+
+Used JSONPlaceholder users as mock authenticated users
+
+User profile is loaded on app start
+
+Profile data is treated as the “logged-in user”
+
+#This approach allows:
+
+Full checkout flow
+
+Order ownership
+
+Profile rendering
+
+Without fake or insecure auth logic
+
+
+#Features Implemented
+✅ Product Listing
+✅ Product Detail
+✅ Image carousel
+✅ Cart
+✅ Checkout
+✅ Toast feedback
+✅ Orders
+
+#Setup Instructions:
+
+The app uses React Native Expo, so Expo Go is required.
+
+1. Clone the repository (git clone <repo-url>
+cd project
+)
+2. Install dependencies (npm install
+)
+3. Start the app (npx expo start
+)
+4. Run on device or emulator (npx expo start
+)
