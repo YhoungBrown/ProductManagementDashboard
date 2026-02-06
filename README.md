@@ -1,8 +1,12 @@
-#React Native E-Commerce App (Assessment Project)
+# React Native E-Commerce App (Assessment Project)
 
 A mobile e-commerce application built with React Native + Expo, demonstrating clean architecture, scalable state management, and production-style patterns within an assessment time constraint.
 
-#Overview
+# App Video Link
+
+https://drive.google.com/file/d/1oNXZBYmdkY2yUA3XwmI3bfS74ZS65YgU/view?usp=drivesdk
+
+# Overview
 
 This project is a simplified e-commerce mobile application that allows users to:
 
@@ -20,7 +24,7 @@ View user profile
 
 The focus of this project is architecture quality, state management, and real-world engineering decisions, rather than full backend implementation.
 
-#Architecture & Design Decisions
+# Architecture & Design Decisions
 1. Layered Architecture
 
 The app follows a feature-oriented layered structure:
@@ -42,7 +46,7 @@ Easier to scale features independently
 Improves testability and maintainability
 
 
-2. #State Management (Redux Toolkit)
+2. # State Management (Redux Toolkit)
 
 I used Redux Toolkit for predictable state management.
 
@@ -64,7 +68,7 @@ Avoids prop-drilling
 
 Redux Toolkit reduces boilerplate and enforces best practices
 
-3. #Navigation (Expo Router)
+3. # Navigation (Expo Router)
 
 File-based routing via expo-router
 
@@ -81,7 +85,7 @@ Scales well as screens increase
 Minimal configuration overhead
 
 
-4. #Type Safety (TypeScript)
+4. # Type Safety (TypeScript)
 
 All domain models are strongly typed:
 
@@ -95,7 +99,7 @@ User
 
 ShippingAddress
 
-#Why this matters:
+# Why this matters:
 
 Prevents runtime bugs
 
@@ -116,7 +120,7 @@ React Native Toast Message -	User feedback
 JSONPlaceholder / DummyJSON -	Mock APIs
 
 
-#Authentication (Not Implemented – By Design)
+# Authentication (Not Implemented – By Design)
 Why authentication was not implemented:
 
 Time-boxed assessment
@@ -125,7 +129,7 @@ No real backend provided
 
 Authentication flows would add significant overhead without improving assessment signal
 
-#Mitigation Strategy:
+# Mitigation Strategy:
 
 Used JSONPlaceholder users as mock authenticated users
 
@@ -133,7 +137,7 @@ User profile is loaded on app start
 
 Profile data is treated as the “logged-in user”
 
-#This approach allows:
+# This approach allows:
 
 Full checkout flow
 
@@ -144,7 +148,7 @@ Profile rendering
 Without fake or insecure auth logic
 
 
-#Features Implemented
+# Features Implemented
 ✅ Product Listing
 ✅ Product Detail
 ✅ Image carousel
@@ -153,7 +157,7 @@ Without fake or insecure auth logic
 ✅ Toast feedback
 ✅ Orders
 
-#Setup Instructions:
+# Setup Instructions:
 
 The app uses React Native Expo, so Expo Go is required.
 
