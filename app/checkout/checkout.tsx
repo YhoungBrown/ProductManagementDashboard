@@ -96,7 +96,7 @@ export default function Checkout() {
                 Total Product:
             </Text>
 
-            <Text style={{color: "white"}}>{total}</Text>
+            <Text style={{color: "white"}}>${total}</Text>
         </View>
 
         <View style={{justifyContent: "space-between", flexDirection: "row"}}>
@@ -104,7 +104,7 @@ export default function Checkout() {
                 Shipping fee:
             </Text>
 
-            <Text style={{color: "white"}}>15.00</Text>
+            <Text style={{color: "white"}}>$15.00</Text>
         </View>
 
         <View style={{justifyContent: "space-between", flexDirection: "row"}}>
@@ -112,7 +112,7 @@ export default function Checkout() {
                 Total Amount:
             </Text>
 
-            <Text style={{color: "white"}}>{total + 15.00}</Text>
+            <Text style={{color: "white"}}>${total + 15.00}</Text>
         </View>
 
         <View style={{marginVertical: 10}}> 
@@ -236,7 +236,7 @@ export default function Checkout() {
         color="#fff"
         onPress={() => {
           createOrder('pending')
-          Toast.show({ type: 'success', text1: 'Order placed (Pending)' })
+          Toast.show({ type: 'Error', text1: 'Order Pending. Awaiting Payment' })
         }}
       />
     </View>
