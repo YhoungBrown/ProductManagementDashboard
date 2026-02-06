@@ -5,6 +5,7 @@ import { persistReducer, persistStore } from 'redux-persist'
 import productsReducer from './slices/products-slice'
 import cartReducer from './slices/cart-slice'
 import ordersReducer from './slices/order-slice'
+import profileReducer from './slices/userProfile-slice'
 
 const cartPersistConfig = {
   key: 'cart',
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   products: productsReducer,
   cart: persistReducer(cartPersistConfig, cartReducer),
   orders: persistReducer(ordersPersistConfig, ordersReducer),
+  profile: profileReducer
 })
 
 export const store = configureStore({

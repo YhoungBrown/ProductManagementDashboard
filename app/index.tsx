@@ -6,13 +6,21 @@ import { WelcomeImageUrl } from '@/constants/app-constants'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useEffect, useRef } from 'react'
 import { Easing } from 'react-native'
+import { loadUser } from '@/store/slices/userProfile-slice'
+import { useAppDispatch } from '@/store/hooks'
 
 
 export default function Welcome() {
   const inset = useSafeAreaInsets()
+   const dispatch = useAppDispatch()
+  
 
   const translateY = useRef(new Animated.Value(-2500)).current
   const opacity = useRef(new Animated.Value(0)).current
+
+  useEffect(() => {
+    dispatch(loadUser())
+  }, [dispatch])
 
   useEffect(() => {
     Animated.parallel([
